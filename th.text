@@ -1,0 +1,112 @@
+What is react
+---------------------
+js library- used to create ui
+provided functionalities which we can use 
+
+react is all about components
+components-reusable piece of code( kind of function)
+
+why react?
+-----------
+js- based on imperative aproach (line by line detailed code)
+react- declarative aproach .it has less complex and  less line of code (end state) 
+reusability
+dry-do not repeat yourself
+readability
+separation odf concern 
+maintaibility
+
+
+
+spa approach
+----------------
+single page app
+loads html file once and all chnages are done to that html file dynamically
+
+react alternative
+--------------------
+angular
+vue
+
+function calling(events)
+-----------------------------
+during eventlistening we only write the function name without brackets()
+as bracket will automatically call the function without the event being performed
+
+state(hook)
+--------------
+to make changes in the ui we use state
+useState returns two values 
+first value of the variable and second the function 
+const[variable,func]
+state chnge is per component instance basis
+
+communication from child to parent takes place via props function 
+
+increment and decrement
+--------------------------
+function App(){
+  const[count,setCount]=useState(0);
+  function incHandler(){
+    setCount(count+1);
+  }
+  function decHandler(){
+    setCount(count-1);
+  }
+  function resetHandler(){
+    setCount(0);
+  }
+
+  return (
+    <div className=" mt-5 height='200px' weight='600px' d-flex flex-column  items-center justify-center bg-success-subtle ">
+      <div className='mb-3 text-center'>Increment and decrement</div>
+      <div  className="  text-center  div1 d-flex flex-row bg-light">
+      <button  className="border-start color-light text-center" onClick={decHandler}>-</button>
+    <div className="">{count}</div>
+    <button onClick={incHandler} className=" mr-3 text-bold text-center  border-start">+</button>
+    </div>
+    <div className='text-center'>
+     <button onClick={resetHandler} className=" bg-info-subtle mt-3">Reset</button>
+    </div>   
+     </div>
+   );
+}
+
+we will use the npm build
+it prevents crashing of website
+has no bounds like in start
+--------------------------------------------
+public should not contain any of detail that we dont want users to see 
+it must not contain any credentials or passwrd like data
+------------------------------------------------------------------------
+PROPS
+custom components can use them 
+read only
+
+
+ROUTING 
+we use server side rendering instead of client side rendering 
+
+
+switch makes a default page and others page are shown if matched 
+if we wnat blank when no page matchd then use exact
+without switch all rendered pages are visible
+
+link is like anchor 
+to is like href
+
+Redux
+------------------------------------------
+Library for managing states
+all data stored in a store 
+when any component needs that data it takes directly from that store
+components-
+*action-plain javascript onbect tells what to do but not how to do
+action creator is function creating an action
+*reducer-function that take current state and action as argument and returnn a new state
+*store-bring together the state action reducer that make app
+only single store
+single root reducer function
+function associated with store
+
+dispatch is used to chnge the state
